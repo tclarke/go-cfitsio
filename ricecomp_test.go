@@ -12,13 +12,13 @@ func TestRicecomp(t *testing.T) {
    }
    t.Log("input",input[:10])
 
-   buf := fits_rcomp(input, 32)
+   buf := Fits_rcomp(input, 32)
    if buf == nil {
       t.Fatal("Rice compression failed.")
    }
    t.Log("buf",buf[:10])
 
-   output := fits_rdecomp(buf, 4096, 32)
+   output := Fits_rdecomp(buf, 4096, 32)
    if output == nil {
       t.Fatal("Rice decompression failed.")
    }
@@ -43,13 +43,13 @@ func TestRicecompByte(t *testing.T) {
    }
    t.Log("input",input[:10])
 
-   buf := fits_rcomp_byte(input, 32)
+   buf := Fits_rcomp_byte(input, 32)
    if buf == nil {
       t.Fatal("Rice compression failed.")
    }
    t.Log("buf",buf[:10])
 
-   output := fits_rdecomp_byte(buf, 4096, 32)
+   output := Fits_rdecomp_byte(buf, 4096, 32)
    if output == nil {
       t.Fatal("Rice decompression failed.")
    }
@@ -74,13 +74,13 @@ func TestRicecompShort(t *testing.T) {
    }
    t.Log("input",input[:10])
 
-   buf := fits_rcomp_short(input, 32)
+   buf := Fits_rcomp_short(input, 32)
    if buf == nil {
       t.Fatal("Rice compression failed.")
    }
    t.Log("buf",buf[:10])
 
-   output := fits_rdecomp_short(buf, 4096, 32)
+   output := Fits_rdecomp_short(buf, 4096, 32)
    if output == nil {
       t.Fatal("Rice decompression failed.")
    }

@@ -16,7 +16,7 @@ import (
    "unsafe"
 )
 
-func fits_rcomp(a []int32, nblock int) []uint8 {
+func Fits_rcomp(a []int32, nblock int) []uint8 {
    nx := C.int(len(a))
    buf := make([]uint8, nx*4)
 
@@ -29,7 +29,7 @@ func fits_rcomp(a []int32, nblock int) []uint8 {
    return buf
 }
 
-func fits_rcomp_byte(a []int8, nblock int) []uint8 {
+func Fits_rcomp_byte(a []int8, nblock int) []uint8 {
    nx := C.int(len(a))
    buf := make([]uint8, nx)
 
@@ -42,7 +42,7 @@ func fits_rcomp_byte(a []int8, nblock int) []uint8 {
    return buf
 }
 
-func fits_rcomp_short(a []int16, nblock int) []uint8 {
+func Fits_rcomp_short(a []int16, nblock int) []uint8 {
    nx := C.int(len(a))
    buf := make([]uint8, nx*2)
 
@@ -55,7 +55,7 @@ func fits_rcomp_short(a []int16, nblock int) []uint8 {
    return buf
 }
 
-func fits_rdecomp(buf []uint8, nx int, nblock int) []int32 {
+func Fits_rdecomp(buf []uint8, nx int, nblock int) []int32 {
    clen := (C.int)(len(buf))
    a := make([]int32, nx)
 
@@ -67,7 +67,7 @@ func fits_rdecomp(buf []uint8, nx int, nblock int) []int32 {
    return a
 }
 
-func fits_rdecomp_byte(buf []uint8, nx int, nblock int) []int8 {
+func Fits_rdecomp_byte(buf []uint8, nx int, nblock int) []int8 {
    clen := (C.int)(len(buf))
    a := make([]int8, nx)
 
@@ -79,7 +79,7 @@ func fits_rdecomp_byte(buf []uint8, nx int, nblock int) []int8 {
    return a
 }
 
-func fits_rdecomp_short(buf []uint8, nx int, nblock int) []int16 {
+func Fits_rdecomp_short(buf []uint8, nx int, nblock int) []int16 {
    clen := (C.int)(len(buf))
    a := make([]int16, nx)
 
